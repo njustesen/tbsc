@@ -12,7 +12,7 @@ public class UserController implements Controller {
 		post("/user/create", (req, res) -> JsonMapper.toJson(
 			UserService.createUser(
 			    req.queryParams("username"),
-			    req.queryParams("email")
+			    req.queryParams("password")
 			)
 		));
 		
