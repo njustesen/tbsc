@@ -18,5 +18,9 @@
 	<classpathentry kind="lib" path="target/dependency/slf4j-simple-1.7.7.jar"/>
 	<classpathentry kind="lib" path="target/dependency/spark-core-2.2.jar"/>
 	<classpathentry kind="lib" path="target/dependency/spark-template-freemarker-2.0.0.jar"/>
+	<classpathentry kind="lib" path="target/dependency/mongo-java-driver-3.0.2.jar"/>
+	<classpathentry kind="lib" path="target/dependency/morphia-1.0.1.jar"/>
+	<classpathentry kind="lib" path="target/dependency/proxytoys-1.0.jar"/>
+	<classpathentry kind="lib" path="target/dependency/cglib-nodep-2.2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
