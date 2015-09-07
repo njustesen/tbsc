@@ -1,8 +1,8 @@
-package tbsc.rest;
+package tbsc.rest.controller;
 
 import static spark.Spark.post;
-
 import tbsc.db.service.UserService;
+import tbsc.rest.JsonMapper;
 
 public class UserController implements Controller {
 
@@ -10,7 +10,7 @@ public class UserController implements Controller {
 	public void addActions() {
 		
 		post("/user/create", (req, res) -> JsonMapper.toJson(
-			UserService.createUser(
+			new UserService().createUser(
 			    req.queryParams("username"),
 			    req.queryParams("password")
 			)

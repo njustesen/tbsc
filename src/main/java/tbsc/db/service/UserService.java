@@ -2,16 +2,20 @@ package tbsc.db.service;
 
 import tbsc.db.DB;
 import tbsc.models.User;
+import tbsc.security.PasswordHasher;
+import tbsc.security.RandomStringGenerator;
 
 public class UserService {
 
-	public static ServiceMessage createUser(String username, String password) {
+	public Object createUser(String username, String password) {
+		
+		String md = new PasswordHasher().hash(password);
 		
 		User user = new User();
 		user.username = username;
-		user.password = password;
+		user.password = md;
 		user.email = "";
-		user.session = "";
+		user.session = new RandomStringGenerator().generate();
 		
 		try {
 			DB.datastore.save(user);
@@ -19,7 +23,7 @@ public class UserService {
 			return new ServiceMessage(true, "Unable to create user");
 		}
 		
-		return new ServiceMessage(false, "User was saved");
+		return user.session;
 		
 	}
 

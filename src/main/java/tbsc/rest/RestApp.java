@@ -7,6 +7,10 @@ import static spark.SparkBase.staticFileLocation;
 import java.util.ArrayList;
 import java.util.List;
 
+import tbsc.rest.controller.Controller;
+import tbsc.rest.controller.TestController;
+import tbsc.rest.controller.UserController;
+
 public class RestApp {
 
 	private List<Controller> controllers;

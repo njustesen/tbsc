@@ -1,4 +1,4 @@
-package tbsc.rest;
+package tbsc.rest.controller;
 
 public interface Controller {
 
