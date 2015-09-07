@@ -1,4 +1,4 @@
-package tbsc.game;
+package tbsc.models.game;
 
 public enum GameStatus {
 	

@@ -1,4 +1,3 @@
-import static spark.Spark.get;
 import tbsc.db.DB;
 import tbsc.rest.RestApp;
 

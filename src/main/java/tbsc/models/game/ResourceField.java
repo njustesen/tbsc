@@ -1,4 +1,4 @@
-package tbsc.game;
+package tbsc.models.game;
 
 import java.util.List;
 

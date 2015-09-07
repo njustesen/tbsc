@@ -27,7 +27,7 @@ public class RestApp {
 	
 	private void init(){
 		for(Controller controller : controllers)
-			controller.addActions();
+			controller.addActions();	
 	}
 	
 }

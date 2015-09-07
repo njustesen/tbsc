@@ -13,11 +13,12 @@ public class DB {
 	private static String db = "heroku_hvx51c4l";
 	private static String username = "njustesen";
 	private static String password = "8e483a05bd";
+	private static String models = "tbsc.models";
 	
 	public static void connect(){
 		
 		final Morphia morphia = new Morphia();
-		morphia.mapPackage("tbsc.game");
+		morphia.mapPackage(models);
 
 		MongoClientURI uri = new MongoClientURI("mongodb://" + username + ":" + password + "@ds041603.mongolab.com:41603/heroku_hvx51c4l");
 		final MongoClient client = new MongoClient(uri);

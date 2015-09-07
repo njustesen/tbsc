@@ -22,5 +22,5 @@ public class TestController implements Controller {
 		get("/ping", (req, res) -> "Hello World!");
 		
 	}
-	
+
 }
