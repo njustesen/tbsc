@@ -14,11 +14,11 @@ public class Game {
 	//List<Player> players;
 	int turn;
 	int round;
-	/*
+	
 	SCMap map;
 	GameStatus status;
 	Player winner;
-	*/
+	
 	public Game() {
 		super();
 		this.turn = 0;
