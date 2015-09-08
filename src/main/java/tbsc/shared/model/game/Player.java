@@ -1,5 +1,6 @@
 package tbsc.shared.model.game;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
@@ -10,7 +11,7 @@ import tbsc.shared.model.User;
 public class Player {
 	
 	@Id
-	public ObjectID id;
+	public ObjectId id;
 
 	@Reference
 	public User user;
