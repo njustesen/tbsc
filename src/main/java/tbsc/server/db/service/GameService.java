@@ -63,7 +63,10 @@ public class GameService {
 			System.out.println("getGameById called");
 			if (SessionService.verifySession(username, session)){
 				System.out.println("session verified");
-				return DB.datastore.find(Game.class).field("_id").equal(id).get();
+				System.out.println("Searching for id = " + id);
+				Game game = DB.datastore.find(Game.class).field("_id").equal(id).get();
+				System.out.println("Game: " + game);
+				return game;
 			} else {
 				System.out.println("session NOT verified");
 				return null;

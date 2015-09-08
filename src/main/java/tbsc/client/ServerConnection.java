@@ -79,7 +79,7 @@ public class ServerConnection {
 					  .field("password", password)
 					  .asObject(String.class);
 			
-			String session = jsonResponse.getBody();
+			String session = strip(jsonResponse.getBody());
 			
 			return new Session(username, session); 
 			
@@ -89,6 +89,12 @@ public class ServerConnection {
 		
 		return null;
 		
+	}
+
+	private String strip(String string) {
+		if (string.length() > 1 && string.charAt(0) == '"' && string.charAt(string.length()-1) == '"')
+			return string.substring(1, string.length()-1);
+		return string;
 	}
 	
 }
