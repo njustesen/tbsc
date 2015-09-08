@@ -50,6 +50,8 @@ public class SessionService {
 				return true;
 			}
 			System.out.println("Session NOT confirmed");
+			System.out.println("user session: " + user.session);
+			System.out.println("user username: " + user.username);
 			return false;
 		} catch (Exception e){
 			System.out.println("Error: " + e);
