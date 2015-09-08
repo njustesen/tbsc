@@ -1,6 +1,5 @@
 package tbsc.client;
 
-import tbsc.client.ui.GameScreen;
 import tbsc.client.ui.UI;
 import tbsc.shared.model.Game;
 

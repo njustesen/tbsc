@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tbsc.server.rest.controller.Controller;
+import tbsc.server.rest.controller.SessionController;
 import tbsc.server.rest.controller.TestController;
 import tbsc.server.rest.controller.UserController;
 
@@ -27,6 +28,7 @@ public class RestApp {
 	private void addControllers() {
 		controllers.add(new UserController());
 		controllers.add(new TestController());
+		controllers.add(new SessionController());
 	}
 	
 	private void init(){
