@@ -1,12 +1,16 @@
 package tbsc.shared.model.game;
 
 import org.mongodb.morphia.annotations.Embedded;
+import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 
 import tbsc.shared.model.User;
 
 @Embedded
 public class Player {
+	
+	@Id
+	public ObjectID id;
 
 	@Reference
 	public User user;
