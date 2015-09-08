@@ -8,7 +8,7 @@ public class Client {
 
 	public static void main(String[] args) {
 		
-		ServerConnection con = new ServerConnection("https://tbsc-dev.herokuapp.com/");
+		ServerConnection con = new ServerConnection("https://tbsc-dev.herokuapp.com");
 		
 		Session session = con.createSession("niller", "12345678");
 		

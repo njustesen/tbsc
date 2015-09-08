@@ -16,13 +16,17 @@ public class SessionService {
 			Query<User> query = DB.datastore.createQuery(User.class)
 					.field("username").equal(username)
 					.field("password").equal(md);
-			if (query.countAll() == 0)
+			if (query.countAll() == 0){
+				System.out.println("No user found.");
 				return null;
+			}	
 			User user = query.get();
 			user.session = new RandomStringGenerator().generate();
 			DB.datastore.save(user);
+			System.out.println("Session set to " + user.session);
 			return user.session;
 		} catch (Exception e){
+			System.out.println("Exception: " + e);
 			return null;
 		}
 		

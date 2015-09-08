@@ -35,5 +35,8 @@
 	<classpathentry kind="lib" path="target/dependency/httpmime-4.3.6.jar"/>
 	<classpathentry kind="lib" path="target/dependency/json-20140107.jar"/>
 	<classpathentry kind="lib" path="target/dependency/unirest-java-1.4.7.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jackson-annotations-2.6.0.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jackson-core-2.6.1.jar"/>
+	<classpathentry kind="lib" path="target/dependency/jackson-databind-2.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
