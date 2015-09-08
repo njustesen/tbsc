@@ -27,6 +27,7 @@ public class RestApp {
 
 	private void addControllers() {
 		controllers.add(new UserController());
+		controllers.add(new GameController());
 		controllers.add(new TestController());
 		controllers.add(new SessionController());
 	}

@@ -2,8 +2,6 @@ package tbsc.client;
 
 import java.io.IOException;
 
-import org.eclipse.jetty.server.Authentication.User;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -12,6 +10,7 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import tbsc.shared.model.Game;
+import tbsc.shared.model.User;
 import tbsc.shared.util.JsonMapper;
 
 public class ServerConnection {
@@ -52,16 +51,16 @@ public class ServerConnection {
 	public Game getGameById(String id, Session session){
 		
 		try {
-			HttpResponse<JsonNode> jsonResponse = Unirest.post(baseURL + "/game/byid/")
+			HttpResponse<Game> jsonResponse = Unirest.post(baseURL + "/game/byid/")
 					  .header("accept", "application/json")
 					  .field("username", session.username)
 					  .field("session", session.key)
 					  .field("id", id)
-					  .asJson();
+					  .asObject(Game.class);
 			
-			String json = jsonResponse.getRawBody().toString();
+			Game game = jsonResponse.getBody();
 			
-			return (Game) JsonMapper.fromJson(json, Game.class); 
+			return game; 
 			
 		} catch (UnirestException e) {
 			e.printStackTrace();
@@ -74,13 +73,13 @@ public class ServerConnection {
 	public Session createSession(String username, String password) {
 		
 		try {
-			HttpResponse<User> jsonResponse = Unirest.post(baseURL + "/session/create")
+			HttpResponse<String> jsonResponse = Unirest.post(baseURL + "/session/create")
 					  .header("accept", "application/json")
 					  .field("username", username)
 					  .field("password", password)
-					  .asObject(User.class);
+					  .asObject(String.class);
 			
-			String session = jsonResponse.getRawBody().toString();
+			String session = jsonResponse.getBody();
 			
 			return new Session(username, session); 
 			
