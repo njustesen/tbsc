@@ -5,12 +5,12 @@ import tbsc.db.service.UserService;
 import tbsc.rest.JsonMapper;
 
 public class UserController implements Controller {
-
+	
 	@Override
 	public void addActions() {
 		
 		post("/user/create", (req, res) -> JsonMapper.toJson(
-			new UserService().createUser(
+			UserService.createUser(
 			    req.queryParams("username"),
 			    req.queryParams("password")
 			)

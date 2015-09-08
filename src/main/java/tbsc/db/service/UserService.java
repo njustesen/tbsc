@@ -7,7 +7,7 @@ import tbsc.security.RandomStringGenerator;
 
 public class UserService {
 
-	public Object createUser(String username, String password) {
+	public static User createUser(String username, String password) {
 		
 		String md = new PasswordHasher().hash(password);
 		
@@ -20,10 +20,25 @@ public class UserService {
 		try {
 			DB.datastore.save(user);
 		} catch (Exception e){
-			return new ServiceMessage(true, "Unable to create user");
+			return null;
 		}
 		
-		return user.session;
+		return user;
+		
+	}
+
+	public static boolean exists(String username) {
+		
+		return DB.datastore.createQuery(User.class)
+			.field("username").equal(username)
+			.countAll() > 0;
+		
+	}
+
+	public static User getUserByName(String username) {
+		
+		return DB.datastore.createQuery(User.class)
+			.field("username").equal(username).get();
 		
 	}
 

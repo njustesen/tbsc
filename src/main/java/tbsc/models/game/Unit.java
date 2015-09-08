@@ -3,6 +3,7 @@ package tbsc.models.game;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
 
+@Embedded
 public class Unit {
 	
 	@Reference

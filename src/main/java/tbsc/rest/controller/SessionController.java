@@ -10,7 +10,7 @@ public class SessionController implements Controller {
 	public void addActions() {
 		
 		post("/session/create", (req, res) -> JsonMapper.toJson(
-			new SessionService().createSession(
+			SessionService.createSession(
 			    req.queryParams("username"),
 			    req.queryParams("password")
 			)

@@ -9,7 +9,7 @@ import tbsc.security.RandomStringGenerator;
 
 public class SessionService {
 
-	public Object createSession(String username, String password) {
+	public static String createSession(String username, String password) {
 		
 		try {
 			String md = new PasswordHasher().hash(password);
@@ -17,34 +17,32 @@ public class SessionService {
 					.field("username").equal(username)
 					.field("password").equal(md);
 			if (query.countAll() == 0)
-				return new ServiceMessage(true, "Wrong username or password");
+				return null;
 			User user = query.get();
 			user.session = new RandomStringGenerator().generate();
 			DB.datastore.save(user);
 			return user.session;
 		} catch (Exception e){
-			return new ServiceMessage(true, "Server error");
+			return null;
 		}
 		
 	}
 	
-	public Object verifySession(String username, String session) {
+	public static boolean verifySession(String username, String session) {
 		
 		try {
 			Query<User> query = DB.datastore.createQuery(User.class)
 					.field("username").equal(username);
 			if (query.countAll() == 0)
-				return new ServiceMessage(true, "Unknown username");
+				return false;
 			User user = query.get();
 			if (user.session.equals(session))
 				return true;
 			return false;
 		} catch (Exception e){
-			return new ServiceMessage(true, "Server error");
+			return false;
 		}
 		
 	}
-
-	
 	
 }

@@ -21,7 +21,7 @@ public class UserTest {
 		String username = "jens-" + date.toString();
 		String password = "12345678";
 		
-		String session = new UserService().createUser(username, password).toString();
+		String session = UserService.createUser(username, password).toString();
 		
 		org.junit.Assert.assertTrue("User creation failed", !session.contains("@"));
 		
@@ -34,15 +34,15 @@ public class UserTest {
 		String username = "jens-" + date.toString();
 		String password = "12345678";
 		
-		String session = new UserService().createUser(username, password).toString();
+		String session = UserService.createUser(username, password).toString();
 		
 		org.junit.Assert.assertTrue("User creation failed", !session.contains("@"));
 		
-		session = new SessionService().createSession(username, "wrongpassword").toString();
+		session = SessionService.createSession(username, "wrongpassword").toString();
 		
 		org.junit.Assert.assertTrue("User login suceeded with wrong password. Response: " + session, session.contains("@"));
 		
-		session = new SessionService().createSession(username, password).toString();
+		session = SessionService.createSession(username, password).toString();
 		
 		org.junit.Assert.assertTrue("User login failed with correct password: Response: " + session, !session.contains("@"));
 		
