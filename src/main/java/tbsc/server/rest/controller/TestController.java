@@ -1,4 +1,4 @@
-package tbsc.rest.controller;
+package tbsc.server.rest.controller;
 
 import static spark.Spark.get;
 

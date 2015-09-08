@@ -1,10 +1,10 @@
-package tbsc.rest.controller;
+package tbsc.server.rest.controller;
 
 import static spark.Spark.post;
-import tbsc.db.service.GameService;
 import tbsc.helper.EnumReader;
 import tbsc.model.game.Race;
-import tbsc.rest.JsonMapper;
+import tbsc.server.db.service.GameService;
+import tbsc.server.rest.JsonMapper;
 
 public class GameController implements Controller {
 	

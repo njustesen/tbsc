@@ -1,16 +1,16 @@
-package tbsc.db.service;
+package tbsc.server.db.service;
 
 import java.util.List;
 
 import org.bson.types.ObjectId;
 
-import tbsc.db.DB;
-import tbsc.map.MapLib;
 import tbsc.model.Game;
 import tbsc.model.User;
 import tbsc.model.game.GameStatus;
 import tbsc.model.game.Player;
 import tbsc.model.game.Race;
+import tbsc.server.db.DB;
+import tbsc.server.map.MapLib;
 
 public class GameService {
 	
@@ -126,6 +126,11 @@ public class GameService {
 			return null;
 		}
 		
+	}
+
+	public static Object updateGame(String username, String session, String id, List<Object> actions) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

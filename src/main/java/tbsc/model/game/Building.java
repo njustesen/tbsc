@@ -1,9 +1,14 @@
 package tbsc.model.game;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
+import org.mongodb.morphia.annotations.Id;
 
 @Embedded
 public class Building {
+	
+	@Id
+	ObjectId id;
 
 	@Embedded
 	BuildingClass buildingClass;

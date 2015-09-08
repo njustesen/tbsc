@@ -1,4 +1,4 @@
-package tbsc.security;
+package tbsc.server.security;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

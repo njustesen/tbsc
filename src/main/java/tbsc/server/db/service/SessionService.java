@@ -1,11 +1,11 @@
-package tbsc.db.service;
+package tbsc.server.db.service;
 
 import org.mongodb.morphia.query.Query;
 
-import tbsc.db.DB;
 import tbsc.model.User;
-import tbsc.security.PasswordHasher;
-import tbsc.security.RandomStringGenerator;
+import tbsc.server.db.DB;
+import tbsc.server.security.PasswordHasher;
+import tbsc.server.security.RandomStringGenerator;
 
 public class SessionService {
 

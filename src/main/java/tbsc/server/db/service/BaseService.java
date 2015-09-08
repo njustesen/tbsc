@@ -1,4 +1,4 @@
-package tbsc.db.service;
+package tbsc.server.db.service;
 
 public abstract class BaseService {
 

@@ -1,4 +1,4 @@
-package tbsc.db;
+package tbsc.server.db;
 
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;

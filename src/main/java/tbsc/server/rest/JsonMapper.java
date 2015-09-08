@@ -1,4 +1,4 @@
-package tbsc.rest;
+package tbsc.server.rest;
 
 import com.google.gson.Gson;
 
@@ -8,6 +8,10 @@ public class JsonMapper {
 	
 	public static String toJson(Object object){
 		return gson.toJson(object);
+	}
+	
+	public static Object fromJson(String json, Class classOfT){
+		return gson.fromJson(json, classOfT);
 	}
 	
 }

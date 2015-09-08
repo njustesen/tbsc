@@ -1,4 +1,4 @@
-package tbsc.rest;
+package tbsc.server.rest;
 
 import static spark.Spark.get;
 import static spark.SparkBase.port;
@@ -7,9 +7,9 @@ import static spark.SparkBase.staticFileLocation;
 import java.util.ArrayList;
 import java.util.List;
 
-import tbsc.rest.controller.Controller;
-import tbsc.rest.controller.TestController;
-import tbsc.rest.controller.UserController;
+import tbsc.server.rest.controller.Controller;
+import tbsc.server.rest.controller.TestController;
+import tbsc.server.rest.controller.UserController;
 
 public class RestApp {
 

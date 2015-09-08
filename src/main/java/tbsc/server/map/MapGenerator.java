@@ -1,4 +1,4 @@
-package tbsc.map;
+package tbsc.server.map;
 
 import tbsc.model.game.SCMap;
 

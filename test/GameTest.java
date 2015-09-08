@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import java.util.Date;
 
-import tbsc.db.DB;
-import tbsc.db.service.GameService;
-import tbsc.db.service.ServiceMessage;
-import tbsc.db.service.UserService;
 import tbsc.model.Game;
 import tbsc.model.game.GameStatus;
 import tbsc.model.game.Race;
+import tbsc.server.db.DB;
+import tbsc.server.db.service.GameService;
+import tbsc.server.db.service.ServiceMessage;
+import tbsc.server.db.service.UserService;
 
 public class GameTest {
 	

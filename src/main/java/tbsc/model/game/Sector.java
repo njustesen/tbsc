@@ -3,10 +3,15 @@ package tbsc.model.game;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
+import org.mongodb.morphia.annotations.Id;
 
 @Embedded
 public class Sector {
+	
+	@Id
+	ObjectId id;
 
 	@Embedded
 	public Hex hex;

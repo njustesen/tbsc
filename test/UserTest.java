@@ -3,9 +3,9 @@ import org.junit.Test;
 
 import java.util.Date;
 
-import tbsc.db.DB;
-import tbsc.db.service.SessionService;
-import tbsc.db.service.UserService;
+import tbsc.server.db.DB;
+import tbsc.server.db.service.SessionService;
+import tbsc.server.db.service.UserService;
 
 public class UserTest {
 	

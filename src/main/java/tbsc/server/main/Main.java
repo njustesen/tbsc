@@ -1,5 +1,6 @@
-import tbsc.db.DB;
-import tbsc.rest.RestApp;
+package tbsc.server.main;
+import tbsc.server.db.DB;
+import tbsc.server.rest.RestApp;
 
 public class Main {
 

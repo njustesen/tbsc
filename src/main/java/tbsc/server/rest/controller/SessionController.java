@@ -1,8 +1,8 @@
-package tbsc.rest.controller;
+package tbsc.server.rest.controller;
 
 import static spark.Spark.post;
-import tbsc.db.service.SessionService;
-import tbsc.rest.JsonMapper;
+import tbsc.server.db.service.SessionService;
+import tbsc.server.rest.JsonMapper;
 
 public class SessionController implements Controller {
 
