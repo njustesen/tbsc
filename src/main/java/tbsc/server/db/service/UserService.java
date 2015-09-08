@@ -1,9 +1,9 @@
 package tbsc.server.db.service;
 
-import tbsc.model.User;
 import tbsc.server.db.DB;
 import tbsc.server.security.PasswordHasher;
 import tbsc.server.security.RandomStringGenerator;
+import tbsc.shared.model.User;
 
 public class UserService {
 

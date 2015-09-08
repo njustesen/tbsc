@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 
-import tbsc.model.Game;
-import tbsc.model.User;
-import tbsc.model.game.GameStatus;
-import tbsc.model.game.Player;
-import tbsc.model.game.Race;
 import tbsc.server.db.DB;
 import tbsc.server.map.MapLib;
+import tbsc.shared.model.Game;
+import tbsc.shared.model.User;
+import tbsc.shared.model.game.GameStatus;
+import tbsc.shared.model.game.Player;
+import tbsc.shared.model.game.Race;
 
 public class GameService {
 	

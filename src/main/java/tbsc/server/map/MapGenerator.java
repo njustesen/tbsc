@@ -1,6 +1,6 @@
 package tbsc.server.map;
 
-import tbsc.model.game.SCMap;
+import tbsc.shared.model.game.SCMap;
 
 public abstract class MapGenerator {
 

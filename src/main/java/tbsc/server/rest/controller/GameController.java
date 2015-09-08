@@ -1,10 +1,13 @@
 package tbsc.server.rest.controller;
 
 import static spark.Spark.post;
-import tbsc.helper.EnumReader;
-import tbsc.model.game.Race;
+
+import org.bson.types.ObjectId;
+
 import tbsc.server.db.service.GameService;
-import tbsc.server.rest.JsonMapper;
+import tbsc.shared.helper.EnumReader;
+import tbsc.shared.helper.JsonMapper;
+import tbsc.shared.model.game.Race;
 
 public class GameController implements Controller {
 	
@@ -27,6 +30,14 @@ public class GameController implements Controller {
 			    req.queryParams("session")
 			)
 		));
+		
+		post("/game/byid/", (req, res) -> JsonMapper.toJson(
+				GameService.getGameById(
+				    req.queryParams("username"),
+				    req.queryParams("session"),
+				    new ObjectId(req.queryParams("id"))
+				)
+			));
 		
 		post("/game/accept/", (req, res) -> JsonMapper.toJson(
 			GameService.acceptGame(

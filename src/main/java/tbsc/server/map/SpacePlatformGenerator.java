@@ -2,13 +2,13 @@ package tbsc.server.map;
 
 import java.util.ArrayList;
 
-import tbsc.model.game.Direction;
-import tbsc.model.game.Hex;
-import tbsc.model.game.Position;
-import tbsc.model.game.ResourceField;
-import tbsc.model.game.SCMap;
-import tbsc.model.game.Sector;
-import tbsc.model.game.TileSet;
+import tbsc.shared.model.game.Direction;
+import tbsc.shared.model.game.Hex;
+import tbsc.shared.model.game.Position;
+import tbsc.shared.model.game.ResourceField;
+import tbsc.shared.model.game.SCMap;
+import tbsc.shared.model.game.Sector;
+import tbsc.shared.model.game.TileSet;
 
 public class SpacePlatformGenerator extends MapGenerator {
 

@@ -3,7 +3,7 @@ package tbsc.server.map;
 import java.util.ArrayList;
 import java.util.List;
 
-import tbsc.model.game.SCMap;
+import tbsc.shared.model.game.SCMap;
 
 public class MapLib {
 
