@@ -35,15 +35,24 @@ public class SessionService {
 	public static boolean verifySession(String username, String session) {
 		
 		try {
+			System.out.println("verify session called");
+			System.out.println("username:" + username);
+			System.out.println("session:" + session);
 			Query<User> query = DB.datastore.createQuery(User.class)
 					.field("username").equal(username);
-			if (query.countAll() == 0)
+			if (query.countAll() == 0){
+				System.out.println("User not found");
 				return false;
+			}
 			User user = query.get();
-			if (user.session.equals(session))
+			if (user.session.equals(session)){
+				System.out.println("Session confirmed");
 				return true;
+			}
+			System.out.println("Session NOT confirmed");
 			return false;
 		} catch (Exception e){
+			System.out.println("Error: " + e);
 			return false;
 		}
 		
