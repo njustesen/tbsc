@@ -14,11 +14,10 @@ public class ResourceField {
 	private static final int GAS = 50 * 2 * 17;
 	
 	@Embedded
-	Direction direction;
-	@Embedded
-	List<Integer> mineralFields;
-	@Embedded
-	List<Integer> gasFields;
+	public Direction direction;
+	
+	public List<Integer> mineralFields;
+	public List<Integer> gasFields;
 	
 	public ResourceField(){
 		

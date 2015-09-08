@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 
 import javax.swing.JComponent;
 
@@ -13,6 +14,7 @@ public class GameScreen extends JComponent {
 
 	private Dimension size;
 	private Game game;
+	private Point camera;
 	
 	public GameScreen(Dimension size, Game game){
 		GameInputController inputController = new GameInputController(this);
@@ -20,6 +22,7 @@ public class GameScreen extends JComponent {
 		this.addMouseMotionListener(inputController);
 		this.size = size;
 		this.game = game;
+		this.camera = new Point(0,0);
 		repaint();
 	}
 
@@ -29,7 +32,15 @@ public class GameScreen extends JComponent {
 		super.paintComponent(g);
 		
 		Image bg = TileSetLib.get(game.map.tileSet).bg;
-		g.drawImage(bg, 0, 0, null);
+		int y = 0;
+		while(y <= size.height){
+			int x = 0;
+			while(x <= size.width){
+				g.drawImage(bg, x, y, null);
+				x += bg.getWidth(null);
+			}
+			y += bg.getHeight(null);
+		}
 		
 	}
 	

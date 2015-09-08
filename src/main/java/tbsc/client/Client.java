@@ -13,7 +13,7 @@ public class Client {
 		
 		Session session = con.createSession("niller", "12345678");
 		
-		Game game = con.getGameById("55eef615a641ed43adabed35", session);
+		Game game = con.getGameById("55ef1ed5a641ed45b00e34d4", session);
 		
 		UI ui = new UI();
 		ui.showGame(game);
