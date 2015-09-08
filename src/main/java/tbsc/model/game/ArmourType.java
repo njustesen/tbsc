@@ -1,4 +1,4 @@
-package tbsc.models.game;
+package tbsc.model.game;
 
 public enum ArmourType {
 

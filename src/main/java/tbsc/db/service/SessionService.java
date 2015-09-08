@@ -3,7 +3,7 @@ package tbsc.db.service;
 import org.mongodb.morphia.query.Query;
 
 import tbsc.db.DB;
-import tbsc.models.User;
+import tbsc.model.User;
 import tbsc.security.PasswordHasher;
 import tbsc.security.RandomStringGenerator;
 

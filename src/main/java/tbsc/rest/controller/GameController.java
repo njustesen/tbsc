@@ -2,8 +2,8 @@ package tbsc.rest.controller;
 
 import static spark.Spark.post;
 import tbsc.db.service.GameService;
-import tbsc.helpers.EnumReader;
-import tbsc.models.game.Race;
+import tbsc.helper.EnumReader;
+import tbsc.model.game.Race;
 import tbsc.rest.JsonMapper;
 
 public class GameController implements Controller {
@@ -16,7 +16,8 @@ public class GameController implements Controller {
 			    req.queryParams("username"),
 			    req.queryParams("session"),
 			    req.queryParams("other"),
-			    EnumReader.parse(req.queryParams("race"), Race.class)
+			    EnumReader.parse(req.queryParams("race"), Race.class),
+			    req.queryParams("map")
 			)
 		));
 		

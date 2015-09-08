@@ -1,4 +1,4 @@
-package tbsc.models.game;
+package tbsc.model.game;
 
 import java.util.List;
 
@@ -7,12 +7,11 @@ import org.mongodb.morphia.annotations.Embedded;
 @Embedded
 public class SCMap {
 	
-	String name;
-	int version;
-	TileSet tileSet;
+	public String name;
+	public int version;
+	public TileSet tileSet;
 	
 	@Embedded
-	List<Sector> sectors;
-	
+	public List<Sector> sectors;
 	
 }

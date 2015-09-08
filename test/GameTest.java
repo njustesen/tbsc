@@ -8,9 +8,9 @@ import tbsc.db.DB;
 import tbsc.db.service.GameService;
 import tbsc.db.service.ServiceMessage;
 import tbsc.db.service.UserService;
-import tbsc.models.Game;
-import tbsc.models.game.GameStatus;
-import tbsc.models.game.Race;
+import tbsc.model.Game;
+import tbsc.model.game.GameStatus;
+import tbsc.model.game.Race;
 
 public class GameTest {
 	
@@ -34,7 +34,7 @@ public class GameTest {
 	@Test
 	public void testCreate() {
 		
-		Object obj = GameService.createGame(username, session, other, Race.Protoss);
+		Object obj = GameService.createGame(username, session, other, Race.Protoss, "Space Platform");
 		
 		Assert.assertTrue("Game is null", obj != null);
 		Assert.assertTrue("Game is not Game instance", obj instanceof Game);
@@ -47,7 +47,7 @@ public class GameTest {
 	@Test
 	public void testGet() {
 		
-		Object obj = GameService.createGame(username, session, other, Race.Protoss);
+		Object obj = GameService.createGame(username, session, other, Race.Protoss, "Space Platform");
 		
 		Assert.assertTrue("Game is null", obj != null);
 		Assert.assertTrue("Game is not Game instance", obj instanceof Game);
@@ -66,7 +66,7 @@ public class GameTest {
 	@Test
 	public void testAccept() {
 		
-		Object obj = GameService.createGame(username, session, other, Race.Protoss);
+		Object obj = GameService.createGame(username, session, other, Race.Protoss, "Space Platform");
 		
 		Assert.assertTrue("Game is null", obj != null);
 		Assert.assertTrue("Game is not Game instance", obj instanceof Game);
@@ -87,7 +87,7 @@ public class GameTest {
 	@Test
 	public void testDecline() {
 		
-		Object obj = GameService.createGame(username, session, other, Race.Protoss);
+		Object obj = GameService.createGame(username, session, other, Race.Protoss, "Space Platform");
 		
 		Assert.assertTrue("Game is null", obj != null);
 		Assert.assertTrue("Game is not Game instance", obj instanceof Game);

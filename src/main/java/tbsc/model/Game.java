@@ -1,4 +1,4 @@
-package tbsc.models;
+package tbsc.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 
-import tbsc.models.game.GameStatus;
-import tbsc.models.game.Player;
-import tbsc.models.game.SCMap;
+import tbsc.model.game.GameStatus;
+import tbsc.model.game.Player;
+import tbsc.model.game.SCMap;
 
 @Entity("games")
 public class Game {

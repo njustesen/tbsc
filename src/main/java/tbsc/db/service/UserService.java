@@ -1,7 +1,7 @@
 package tbsc.db.service;
 
 import tbsc.db.DB;
-import tbsc.models.User;
+import tbsc.model.User;
 import tbsc.security.PasswordHasher;
 import tbsc.security.RandomStringGenerator;
 

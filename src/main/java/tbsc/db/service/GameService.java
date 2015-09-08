@@ -5,15 +5,16 @@ import java.util.List;
 import org.bson.types.ObjectId;
 
 import tbsc.db.DB;
-import tbsc.models.Game;
-import tbsc.models.User;
-import tbsc.models.game.GameStatus;
-import tbsc.models.game.Player;
-import tbsc.models.game.Race;
+import tbsc.map.MapLib;
+import tbsc.model.Game;
+import tbsc.model.User;
+import tbsc.model.game.GameStatus;
+import tbsc.model.game.Player;
+import tbsc.model.game.Race;
 
 public class GameService {
 	
-	public static Object createGame(String username, String session, String other, Race race) {
+	public static Object createGame(String username, String session, String other, Race race, String map) {
 		
 		if (other.equals(username))
 			return new ServiceMessage(true, "You cannot challenge yourself");
@@ -24,8 +25,9 @@ public class GameService {
 					User userA = UserService.getUserByName(username);
 					User userB = UserService.getUserByName(other);
 					Game game = new Game(new Player(userA, race), new Player(userB, null));
+					game.map = MapLib.get(map);
 					DB.datastore.save(game);
-					return game;
+					return getGameById(username, session, game.id);
 				} else {
 					return new ServiceMessage(true, other + " does not exist");
 				}

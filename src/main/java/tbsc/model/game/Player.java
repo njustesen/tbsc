@@ -1,9 +1,9 @@
-package tbsc.models.game;
+package tbsc.model.game;
 
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
 
-import tbsc.models.User;
+import tbsc.model.User;
 
 @Embedded
 public class Player {

@@ -1,4 +1,4 @@
-package tbsc.helpers;
+package tbsc.helper;
 
 public class EnumReader {
 
