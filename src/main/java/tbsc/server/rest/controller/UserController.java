@@ -2,7 +2,7 @@ package tbsc.server.rest.controller;
 
 import static spark.Spark.post;
 import tbsc.server.db.service.UserService;
-import tbsc.shared.helper.JsonMapper;
+import tbsc.shared.util.JsonMapper;
 
 public class UserController implements Controller {
 	

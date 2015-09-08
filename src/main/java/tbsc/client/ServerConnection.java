@@ -11,8 +11,8 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-import tbsc.shared.helper.JsonMapper;
 import tbsc.shared.model.Game;
+import tbsc.shared.util.JsonMapper;
 
 public class ServerConnection {
 

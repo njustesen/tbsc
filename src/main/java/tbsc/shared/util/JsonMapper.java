@@ -1,4 +1,4 @@
-package tbsc.shared.helper;
+package tbsc.shared.util;
 
 import com.google.gson.Gson;
 

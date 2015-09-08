@@ -5,9 +5,9 @@ import static spark.Spark.post;
 import org.bson.types.ObjectId;
 
 import tbsc.server.db.service.GameService;
-import tbsc.shared.helper.EnumReader;
-import tbsc.shared.helper.JsonMapper;
 import tbsc.shared.model.game.Race;
+import tbsc.shared.util.EnumReader;
+import tbsc.shared.util.JsonMapper;
 
 public class GameController implements Controller {
 	

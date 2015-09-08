@@ -3,6 +3,7 @@ package tbsc.client.ui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
 
 import javax.swing.JComponent;
 
@@ -27,8 +28,8 @@ public class GameScreen extends JComponent {
 		
 		super.paintComponent(g);
 		
-		g.setColor(Color.darkGray);
-		g.fillRect(0, 0, size.width, size.height);
+		Image bg = TileSetLib.get(game.map.tileSet).bg;
+		g.drawImage(bg, 0, 0, null);
 		
 	}
 	
