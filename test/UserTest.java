@@ -6,6 +6,7 @@ import java.util.Date;
 import tbsc.server.db.DB;
 import tbsc.server.db.service.SessionService;
 import tbsc.server.db.service.UserService;
+import tbsc.shared.model.User;
 
 public class UserTest {
 	
@@ -21,7 +22,8 @@ public class UserTest {
 		String username = "jens-" + date.toString();
 		String password = "12345678";
 		
-		String session = UserService.createUser(username, password).toString();
+		User user = UserService.createUser(username, password);
+		String session = user.session;
 		
 		org.junit.Assert.assertTrue("User creation failed", !session.contains("@"));
 		
@@ -34,17 +36,30 @@ public class UserTest {
 		String username = "jens-" + date.toString();
 		String password = "12345678";
 		
-		String session = UserService.createUser(username, password).toString();
+		String session = UserService.createUser(username, password).session;
 		
 		org.junit.Assert.assertTrue("User creation failed", !session.contains("@"));
 		
-		session = SessionService.createSession(username, "wrongpassword").toString();
+		session = SessionService.createSession(username, "wrongpassword");
 		
 		org.junit.Assert.assertTrue("User login suceeded with wrong password. Response: " + session, session.contains("@"));
 		
-		session = SessionService.createSession(username, password).toString();
+		session = SessionService.createSession(username, password);
 		
 		org.junit.Assert.assertTrue("User login failed with correct password: Response: " + session, !session.contains("@"));
+		
+	}
+	
+	@Test
+	public void testLogin() {
+		
+		String session = SessionService.createSession("niller", "12345678");
+		
+		org.junit.Assert.assertTrue("User login suceeded with wrong password. Response: " + session, !session.contains("@"));
+		
+		boolean verified = SessionService.verifySession("niller", session);
+		
+		org.junit.Assert.assertTrue("User session not verifired. Response: " + session, verified);
 		
 	}
 	
