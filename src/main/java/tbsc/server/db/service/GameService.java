@@ -60,12 +60,16 @@ public class GameService {
 	public static Game getGameById(String username, String session, ObjectId id){
 		
 		try {
+			System.out.println("getGameById called");
 			if (SessionService.verifySession(username, session)){
+				System.out.println("session verified");
 				return DB.datastore.find(Game.class).field("_id").equal(id).get();
 			} else {
+				System.out.println("session NOT verified");
 				return null;
 			}
 		} catch (Exception e){
+			System.out.println("Error: " + e);
 			return null;
 		}
 		
