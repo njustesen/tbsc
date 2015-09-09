@@ -1,6 +1,6 @@
 package tbsc.shared.model.game;
 
-public enum HexSide {
+public enum TileSide {
 	
 	FREE, WALL, PASSAGE;
 	

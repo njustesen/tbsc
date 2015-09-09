@@ -4,14 +4,11 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import tbsc.shared.model.Game;
-import tbsc.shared.model.User;
-import tbsc.shared.util.JsonMapper;
 
 public class ServerConnection {
 

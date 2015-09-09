@@ -1,5 +1,8 @@
 package tbsc.shared.model.game;
 
+import org.mongodb.morphia.annotations.Embedded;
+
+@Embedded
 public class Position {
 
 	public int x = 0;

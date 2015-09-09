@@ -12,6 +12,6 @@ public class SCMap {
 	public TileSet tileSet;
 	
 	@Embedded
-	public List<Sector> sectors;
+	public List<Tile> tiles;
 	
 }

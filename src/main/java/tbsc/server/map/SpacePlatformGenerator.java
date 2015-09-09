@@ -1,13 +1,15 @@
 package tbsc.server.map;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import tbsc.shared.model.game.Direction;
-import tbsc.shared.model.game.Hex;
+import tbsc.shared.model.game.Tile;
+import tbsc.shared.model.game.TileSide;
 import tbsc.shared.model.game.Position;
 import tbsc.shared.model.game.ResourceField;
 import tbsc.shared.model.game.SCMap;
-import tbsc.shared.model.game.Sector;
+import tbsc.shared.model.game.Tile;
 import tbsc.shared.model.game.TileSet;
 
 public class SpacePlatformGenerator extends MapGenerator {
@@ -20,19 +22,27 @@ public class SpacePlatformGenerator extends MapGenerator {
 		map.name = "Space Platform";
 		map.tileSet = TileSet.SPACE_PLATFORM;
 		map.version = 1;
-		map.sectors = new ArrayList<Sector>();
+		map.tiles = new ArrayList<Tile>();
 		
-		Hex hexA = new Hex(new ResourceField(Direction.N), 1, "WWPWWW");
-		map.sectors.add(new Sector(new Position(0, 0), hexA, 0));
+		Map<Direction, TileSide> sidesA = Tile.sides("PWWW");
+		Tile hexA = new Tile(new Position(0, 1), sidesA, 0);
+		hexA.resField = new ResourceField(Direction.DOWN);
+		map.tiles.add(hexA);
 		
-		Hex hexAne = new Hex(null, 0, "WWWWFP");
-		map.sectors.add(new Sector(new Position(1, 1), hexAne));
+		Map<Direction, TileSide> sidesAe = Tile.sides("WFPW");
+		Tile hexAe = new Tile(new Position(0, 0), sidesAe, 0);
+		hexAe.resField = new ResourceField(Direction.LEFT);
+		map.tiles.add(hexAe);
 		
-		Hex hexB = new Hex(new ResourceField(Direction.N), 1, "WWWWWP");
-		map.sectors.add(new Sector(new Position(1, 2), hexB, 1));
+		Map<Direction, TileSide> sidesB = Tile.sides("PWWW");
+		Tile hexB = new Tile(new Position(1, 1), sidesB, 0);
+		hexB.resField = new ResourceField(Direction.DOWN);
+		map.tiles.add(hexB);
 		
-		Hex hexBne = new Hex(null, 0, "WFPWWW");
-		map.sectors.add(new Sector(new Position(0, 1), hexBne));
+		Map<Direction, TileSide> sidesBe = Tile.sides("WWPF");
+		Tile hexBe = new Tile(new Position(1, 1), sidesBe, 0);
+		hexBe.resField = new ResourceField(Direction.RIGHT);
+		map.tiles.add(hexBe);
 		
 		return map;
 		
